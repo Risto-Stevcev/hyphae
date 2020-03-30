@@ -238,6 +238,7 @@ export {
   AsyncPipe,
   AsyncSymmetricPipe,
   AsyncConnection,
+  Stream,
   pipe,
   pure,
   fromSync,
@@ -253,5 +254,6 @@ export {
   wait,
   tap,
   log,
-  take
+  take,
+  timeout
 }

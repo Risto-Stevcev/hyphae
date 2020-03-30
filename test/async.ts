@@ -31,7 +31,7 @@ describe('Async', () => {
   })
 
   describe('interval', () => {
-    it.only('should run on an interval', () => {
+    it('should run on an interval', () => {
       let stream = interval(100)
       return expect(
         pipe(
