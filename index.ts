@@ -19,11 +19,15 @@ type AsyncConnection<T> = AsyncPipe<T, void>
 
 type Stream<T> = { input: InputStream<T>; output?: SyncOutputStream<void> }
 
-// TODO: make typescript recognize this and discharge proof obligations
-const isStream = value =>
-  value instanceof Object &&
-  value.hasOwnProperty('input') &&
-  value.hasOwnProperty('output')
+const maybeStream = (value: any): Stream<any> | null => {
+  if (
+    value instanceof Object &&
+    value.hasOwnProperty('input') &&
+    value.hasOwnProperty('output')
+  ) {
+    return <Stream<any>>value
+  } else return null
+}
 
 const pure = <T>(value: T): Stream<T> => {
   return {
@@ -245,7 +249,7 @@ export {
   AsyncSymmetricPipe,
   AsyncConnection,
   Stream,
-  isStream,
+  maybeStream,
   isDone,
   pipe,
   pure,
