@@ -1,0 +1,30 @@
+{
+  "name": "lambda-streams",
+  "version": "1.0.0",
+  "description": "A simple streaming library based on lambdas",
+  "main": "index.js",
+  "repository": "https://github.com/Risto-Stevcev/lambda-streams-js",
+  "author": "Risto-Stevcev",
+  "license": "BSD-3-Clause",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "avoid"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "mocha",
+    "test:watch": "mocha -w"
+  },
+  "devDependencies": {
+    "@types/mocha": "^7.0.2",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^7.1.1",
+    "prettier": "^2.0.2",
+    "tslint": "^6.1.0",
+    "typescript": "^3.8.3"
+  }
+}
