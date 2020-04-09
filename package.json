@@ -1,6 +1,6 @@
 {
   "name": "hyphae",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple streaming library based on lambdas",
   "main": "index.js",
   "types": "index.d.ts",
