@@ -1,0 +1,23 @@
+import { Signal } from './signal';
+declare type InputStream<T> = () => Signal<T>;
+declare type OutputStream<T> = (value?: Signal<T>) => void;
+declare type Pipe<A, B> = {
+    input: InputStream<A>;
+    output: OutputStream<B>;
+};
+declare type SymmetricPipe<T> = Pipe<T, T>;
+declare type Connection<T> = Pipe<T, void>;
+declare const nothing: InputStream<void>;
+declare const blackhole: OutputStream<any>;
+declare const noop: OutputStream<void>;
+declare const pipe: (...functions: any[]) => any;
+declare const connect: <T>(input: InputStream<T>, output: OutputStream<T>) => void;
+declare const pure: <T>(value: T) => InputStream<T>;
+declare const empty: InputStream<any>;
+declare const fromArray: <T>(array: T[]) => InputStream<T>;
+declare const map: <A, B>(f: (A: any) => B) => (stream: InputStream<A>) => InputStream<B>;
+declare const filter: <T>(f: (T: any) => boolean) => (stream: InputStream<T>) => InputStream<T>;
+declare const toArray: <T>(stream: InputStream<T>) => T[];
+declare const blabber: <A, B>({ input }: Pipe<A, B>) => InputStream<A>;
+declare const silence: <A, B>({ output }: Pipe<A, B>) => OutputStream<B>;
+export { InputStream, OutputStream, Pipe, SymmetricPipe, Connection, nothing, blackhole, noop, pipe, connect, pure, empty, fromArray, map, filter, toArray, blabber, silence };

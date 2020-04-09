@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "A simple streaming library based on lambdas",
   "main": "index.js",
-  "repository": "https://github.com/Risto-Stevcev/lambda-streams-js",
+  "types": "index.d.ts",
+  "repository": "https://github.com/Risto-Stevcev/hyphae",
   "author": "Risto-Stevcev",
   "license": "BSD-3-Clause",
   "prettier": {
