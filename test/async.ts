@@ -11,7 +11,7 @@ import {
   interval,
   fromArray,
   toArray
-} from '../'
+} from '../async'
 import { endOfTransmission } from '../signal'
 
 use(chaiAsPromised)
